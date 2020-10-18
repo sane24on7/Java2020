@@ -45,7 +45,18 @@ public class hw2 {
 //        true, если в массиве есть место, в котором сумма левой и правой части массива равны.
 //        Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true, checkBalance([1, 1, 1, || 2, 1]) → true,
 //        граница показана символами ||, эти символы в массив не входят.
+        int [] arrayTask6 = {2, 2, 2, 1, 2, 2, 10, 1};
+        System.out.println("Task 6");
+        System.out.println(isLeftAndRightEqual(arrayTask6));
 
+
+//        7. **** Написать метод, которому на вход подается одномерный массив и число n (может быть положительным,
+//        или отрицательным), при этом метод должен сместить все элементымассива на n позиций. Для усложнения задачи
+//        нельзя пользоваться вспомогательными массивами.
+        int[] arrayTask7 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        System.out.println("Task 7");
+        System.out.println(Arrays.toString(arrayTask7));
+        System.out.println(Arrays.toString((replaceArrElements(arrayTask7, -3))));
     }
 
     //        1. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].
@@ -96,5 +107,57 @@ public class hw2 {
         }
         System.out.println(Arrays.toString(inputArray));
         System.out.println("Minimum = " + min + ", maximum = " + max);
+    }
+//     6. ** Написать метод, в который передается не пустой одномерный целочисленный массив, метод должен вернуть true,
+//     если в массиве есть место, в котором сумма левой и правой части массива равны.
+//     Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true, checkBalance([1, 1, 1, || 2, 1]) → true, граница
+//     показана символами ||, эти символы в массив не входят.
+    public static boolean isLeftAndRightEqual(int[] inputArray) {
+        int left = 0, right = 0;
+        for (int x:
+             inputArray) {
+            right += x;
+        }
+        for (int j : inputArray) {
+            if (left != right) {
+                left += j;
+                right -= j;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+//    7. **** Написать метод, которому на вход подается одномерный массив и число n (может быть положительным,
+//    или отрицательным), при этом метод должен сместить все элементымассива на n позиций. Для усложнения задачи
+//    нельзя пользоваться вспомогательными массивами.
+    public static int[] replaceArrElements(int[] inputArray, int n) {
+        // Если n больше длины массива ищем на сколько элементов происходит сдвиг
+        if (n != 0) {
+            if (Math.abs(n) > inputArray.length) {
+                n = n % inputArray.length;
+            }
+            if(n > 0) {
+                for(int i = 0; i < n; i++) {
+                    int buffer = inputArray[0];
+                    inputArray[0] = inputArray[inputArray.length - 1];
+                    for(int j = 1; j < inputArray.length - 1; j++ ) {
+                        inputArray[inputArray.length-j] = inputArray[inputArray.length - j - 1];
+                    }
+                    inputArray[1] = buffer;
+                }
+            } else if(n < 0) {
+                n = Math.abs(n);
+                for(int i = 0; i < n; i++) {
+                    int buffer = inputArray[inputArray.length - 1];
+                    inputArray[inputArray.length - 1] = inputArray[0];
+                    for(int j = 1; j < inputArray.length - 1; j++) {
+                        inputArray[j - 1] = inputArray[j];
+                    }
+                    inputArray[inputArray.length - 2] = buffer;
+                }
+            }
+        }
+        return inputArray;
     }
 }
