@@ -1,9 +1,9 @@
-package java1;
+package java1.hw3;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class hw3 {
+public class hw1 {
 
     public static Scanner scanner = new Scanner(System.in);
     public static Random random = new Random();
