@@ -18,7 +18,8 @@ public class Person {
 
     }
     public void getDataOfPerson(){
-        System.out.println(this.name + ", " + this.job + ", " + this.email + ", " + this.phone + ", $" + this.salary + ", " + this.age + " y.o.");
+        System.out.println(this.name + ", " + this.job + ", " + this.email + ", " + this.phone + ", $" + this.salary
+                + ", " + this.age + " y.o.");
     }
 
 }
