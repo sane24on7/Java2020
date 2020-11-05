@@ -1,9 +1,9 @@
-package java1.hw3;
+package java1;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class hw1 {
+public class hw3 {
 
     public static Scanner scanner = new Scanner(System.in);
     public static Random random = new Random();
@@ -30,7 +30,19 @@ public class hw1 {
             System.out.println("Вы " + ((inputNumber == number)? "выиграли!" : "проиграли." + number));
             System.out.println("Повторить игру еще раз? 1 – да / 0 – нет");
         } while(scanner.nextInt() == 1);
-        scanner.close();
+    }
+    // Проверка входных данных
+    static int getNumberFromConsole() {
+        do {
+            if (scanner.hasNextInt()) {
+                return scanner.nextInt();
+            }
+            System.out.println("Введите целое число");
+            scanner.nextLine();
+        } while (true);
     }
 
+    static void guessNumber() {
+        
+    }
 }
