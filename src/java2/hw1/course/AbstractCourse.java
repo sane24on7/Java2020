@@ -1,7 +1,7 @@
 package java2.hw1.course;
 
-import java2.hw1.Team;
-import java2.hw1.Teammate;
+import java2.hw1.team.Team;
+import java2.hw1.team.Teammate;
 
 public abstract class AbstractCourse implements Course {
     @Override

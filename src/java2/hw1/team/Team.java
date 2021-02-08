@@ -1,4 +1,4 @@
-package java2.hw1;
+package java2.hw1.team;
 
 import java.util.Arrays;
 
