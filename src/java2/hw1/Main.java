@@ -1,6 +1,9 @@
 package java2.hw1;
 
 import java2.hw1.course.Course;
+import java2.hw1.course.RunningRoad;
+import java2.hw1.team.Team;
+import java2.hw1.team.Teammate;
 
 public class Main {
     /*
@@ -20,8 +23,13 @@ public class Main {
     }
      */
     public static void main(String[] args) {
-//        Course c = new Course(...); // Создаем полосу препятствий
 //        Team team = new Team(...); // Создаем команду
+        Course runningRoad = new RunningRoad();
+        Team team = new Team("Blade Runners",
+                new Teammate ("Andy", 155, 38),
+                new Teammate("Lara", 350,70),
+                new Teammate("Cody", 48,30))
+
 //        c.doIt(team); // Просим команду пройти полосу
 //        team.showResults(); // Показываем результаты
     }

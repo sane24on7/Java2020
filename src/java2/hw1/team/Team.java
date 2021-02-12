@@ -10,6 +10,7 @@ public class Team {
         this.name = name;
         this.teammates = teammates;
     }
+
     public void showFullInfo() {
         System.out.println("Team's name: " + name);
         System.out.println(Arrays.toString(teammates));
