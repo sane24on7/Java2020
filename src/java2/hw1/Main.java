@@ -23,7 +23,7 @@ public class Main {
     team.showResults(); // Показываем результаты
     }
      */
-    public static void main(String[] args) {
+public static void main(String[] args) {
         Course[] courses = {new RunningRoad(), new SwimmingPool()};
         Team team = new Team("Blade Runners",
                 new Teammate ("Andy", 155, 38),
