@@ -2,6 +2,7 @@ package java2.hw1;
 
 import java2.hw1.course.Course;
 import java2.hw1.course.RunningRoad;
+import java2.hw1.course.SwimmingPool;
 import java2.hw1.team.Team;
 import java2.hw1.team.Teammate;
 
@@ -22,15 +23,21 @@ public class Main {
     team.showResults(); // Показываем результаты
     }
      */
-    public static void main(String[] args) {
-//        Team team = new Team(...); // Создаем команду
-//        Course runningRoad = new RunningRoad();
-//        Team team = new Team("Blade Runners",
-//                new Teammate ("Andy", 155, 38),
-//                new Teammate("Lara", 350,70),
-//                new Teammate("Cody", 48,30))
+public static void main(String[] args) {
+        Course[] courses = {new RunningRoad(), new SwimmingPool()};
+        Team team = new Team("Blade Runners",
+                new Teammate ("Andy", 155, 38),
+                new Teammate("Lara", 350,70),
+                new Teammate("Cody", 480,64),
+                new Teammate("Carry", 150,0)
+        );
+        for (int i = 0; i < courses.length ; i++) {
+            System.out.println();
+            System.out.println("Course: " + courses[i].getClass().getName());
+            courses[i].doIt(team);
+            team.showFullResults();
+            team.showSingleResults();
 
-//        c.doIt(team); // Просим команду пройти полосу
-//        team.showResults(); // Показываем результаты
+        }
     }
 }
