@@ -7,11 +7,6 @@ public class RunningRoad extends AbstractCourse{
 
     @Override
     protected void doIt(Teammate teammate) {
-        if (teammate.getMaxRunningDistance() >= distance) {
-            teammate.setPassed(true);
-        } else {
-            teammate.setPassed(false);
-        }
+        teammate.setPassed(teammate.getMaxRunningDistance() >= distance);
     }
-
 }

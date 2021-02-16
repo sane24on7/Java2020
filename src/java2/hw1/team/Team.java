@@ -6,15 +6,18 @@ public class Team {
     private String name;
     private Teammate[] teammates;
 
-    public Team(String name, Teammate[] teammates) {
+    public Team(String name, Teammate... teammates) {
         this.name = name;
         this.teammates = teammates;
     }
-    public void showFullInfo() {
+
+    public void showFullResults() {
+        System.out.println("Team's full info.");
         System.out.println("Team's name: " + name);
         System.out.println(Arrays.toString(teammates));
     }
-    public void showPassedInfo() {
+    public void showSingleResults() {
+        System.out.println("Teammate's info.");
         System.out.println("Team's name: " + name);
         for (int i = 0; i < teammates.length; i++) {
             if (teammates[i].isPassed()) {
